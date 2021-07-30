@@ -17,11 +17,11 @@ module ActiveGraph
       end
 
       def inject_field_types
-        inject_into_file model_path, model_contents , after: /Neo4j::ActiveNode\n/ if model_exists?
+        inject_into_file model_path, model_contents , after: /ActiveGraph::Node\n/ if model_exists?
       end
 
       def inject_devise_content
-        inject_into_file model_path,  migration_data , after: /Neo4j::ActiveNode\n/ if model_exists?
+        inject_into_file model_path,  migration_data , after: /ActiveGraph::Node\n/ if model_exists?
       end
 
       def migration_data
